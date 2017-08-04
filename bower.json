@@ -1,0 +1,20 @@
+{
+  "name": "ask-simple-data-tables",
+  "homepage": "https://github.com/kvarunsameer/ask-simple-data-tables",
+  "authors": [
+    "kvarunsameer <kvarunsameer@gmail.com>"
+  ],
+  "description": "simple data tables",
+  "main": "",
+  "keywords": [
+    "{{site.project_title}}"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

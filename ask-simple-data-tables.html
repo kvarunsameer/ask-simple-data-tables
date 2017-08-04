@@ -1,0 +1,47 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<!--
+`<ask-simple-data-tables>` is Description
+
+@element ask-simple-data-tables
+-->
+<dom-module id="ask-simple-data-tables">
+    <template>
+        <style>
+            :host {
+                display: block
+            }
+        </style>
+
+        <h1>Testing</h1>
+
+    </template>
+
+    <script>
+        class askSimpleDataTables extends Polymer.Element {
+
+            static get is() { return 'ask-simple-data-tables'; }
+
+            static get properties() {
+                return {
+                    
+                };
+            }
+
+            constructor() {
+                super();
+            }
+
+            ready() {
+                super.ready();
+
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                    
+                });
+            }
+
+        }
+
+        window.customElements.define(askSimpleDataTables.is, askSimpleDataTables);
+    </script>
+</dom-module>
