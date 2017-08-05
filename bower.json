@@ -1,10 +1,11 @@
 {
-  "name": "ask-simple-data-tables",
-  "homepage": "https://github.com/kvarunsameer/ask-simple-data-tables",
+  "name": "simple-datatables",
+  "version": "1.0.1",
+  "homepage": "https://github.com/kvarunsameer/simple-datatables",
   "authors": [
     "kvarunsameer <kvarunsameer@gmail.com>"
   ],
-  "description": "simple data tables",
+  "description": "Simple Searchable data table",
   "main": "",
   "keywords": [
     "{{site.project_title}}"
