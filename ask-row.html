@@ -1,0 +1,66 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<dom-module id="ask-row">
+  <template>
+    <style>
+
+
+.ask-row-inner {
+  display: flex;
+}
+.ask-cell {
+	border: solid 1px #f1f1ed;
+	border-collapse: collapse;
+	padding: 12px 12px;
+  color: #232323;
+  background: transparent;
+  font-size: 14px;
+  flex: 1;
+  margin: -1px -1px 0 0;
+}
+</style>
+<div class="ask-row-inner">
+    <template is="dom-repeat" items="{{_toArray(innerdata)}}">
+      <div class="ask-cell">
+         <!-- name: <span>{{item.name}}</span> -->
+        <span>{{item.value}}</span>
+      </div>
+    </template>
+    </div>
+  </template>
+  <script>
+  class askRow extends Polymer.Element {
+    constructor() {
+      super();
+    }
+    static get is(){
+      return 'ask-row';
+    }
+    static get properties () {
+      return {
+        innerdata: {
+          type: Object,
+          value: {},
+          notify: true,
+          reflectToAttribute: true
+        },
+        obj: Object,
+      }
+    }
+    _toArray(obj) {
+            return Object.keys(obj).map(function(key) {
+                return {
+                    name: key,
+                    value: obj[key]
+                };
+            });
+        }
+    ready(){
+      super.ready();
+      if(this.innerdata == '') {
+        this.innerdata = {"Name":"Arun Sameer", "Technology":"Polymer", "Start Date":"03-08-2017", "End Date": "04-08-2017"};
+      }
+    }
+  }
+  window.customElements.define(askRow.is, askRow);
+</script>
+</dom-module>

@@ -1,0 +1,30 @@
+{
+  "name": "ask-simple-data-tables",
+  "homepage": "https://github.com/kvarunsameer/ask-simple-data-tables",
+  "authors": [
+    "kvarunsameer <kvarunsameer@gmail.com>"
+  ],
+  "description": "simple data tables",
+  "main": "",
+  "keywords": [
+    "{{site.project_title}}"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "9f647ae201",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "9f647ae20187c28af9832aeb82dffa7402ed831d"
+  },
+  "_source": "https://github.com/kvarunsameer/ask-simple-data-tables.git",
+  "_target": "*",
+  "_originalSource": "ask-simple-data-tables",
+  "_direct": true
+}

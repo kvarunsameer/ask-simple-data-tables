@@ -1,0 +1,64 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<dom-module id="ask-head">
+  <template>
+    <style>
+
+
+.ask-row-inner {
+  display: flex;
+}
+.ask-cell {
+        background: #ff6200;
+        border: solid 1px #dc5a09;
+	border-collapse: collapse;
+	padding: 12px 12px;
+  color: #fff;
+  font-size: 14px;
+  flex: 1;
+  margin: -1px -1px 0 0;
+}
+</style>
+<div class="ask-row-inner">
+    <template is="dom-repeat" items="{{_toArray(innerdata)}}">
+      <div class="ask-cell">
+         <!-- name: <span>{{item.name}}</span> -->
+        <span>{{item.name}}</span>
+      </div>
+    </template>
+</div>
+</template>
+  <script>
+  class askHead extends Polymer.Element {
+    constructor() {
+      super();
+    }
+    static get is(){
+      return 'ask-head';
+    }
+    static get properties () {
+      return {
+        innerdata: {
+          type: Object,
+          value: {},
+          notify: true,
+          reflectToAttribute: true
+        },
+        obj: Object,
+      }
+    }
+    _toArray(obj) {
+            return Object.keys(obj).map(function(key) {
+                return {
+                    name: key,
+                    value: obj[key]
+                };
+            });
+        }
+    ready(){
+      super.ready();
+      console.log(this.innerdata);
+    }
+  }
+  window.customElements.define(askHead.is, askHead);
+</script>
+</dom-module>
