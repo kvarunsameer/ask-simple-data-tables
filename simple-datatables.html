@@ -160,6 +160,7 @@
         }
         console.log(tabledata);
     }
+
     _toArray(obj) {
             return Object.keys(obj).map(function(key) {
                 return {
@@ -168,6 +169,12 @@
                 };
             });
         }
+    handleResponse(res) {
+      this.list = res.detail.response;
+    }
+    _handleErrorResponse (event) {
+      console.log("Error Response"+event.detail.request.xhr.response);
+    }
 }
         window.customElements.define(askSimpleDataTables.is, askSimpleDataTables);
     </script>
