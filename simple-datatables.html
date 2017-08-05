@@ -99,7 +99,7 @@
         </template>
     </div>
     <div class="ask-body">
-        <template is="dom-repeat" items="{{tabledata}}">
+        <template is="dom-repeat" items="{{tabledata}}" filter="{{_computeFilter(searchString)}}">
             <div class="ask-row"> 
                 <ask-row innerdata="{{item}}"></ask-row>
             </div> 
@@ -122,7 +122,6 @@
         tabledata: {
           type: Array,
           value: [{"Name":"Arun Sameer", "Technology":"Polymer", "Start Date":"03-08-2017", "End Date": "04-08-2017"},{"Name":"Vinay Natha", "Technology":"Polymer", "Start Date":"03-08-2017", "End Date": "04-08-2017"},{"Name":"Sanjeev Munaga", "Technology":"Polymer", "Start Date":"03-08-2017", "End Date": "04-08-2017"},{"Name":"Priyanka Rani", "Technology":"Polymer", "Start Date":"03-08-2017", "End Date": "04-08-2017"}],
-          notify: true,
           reflectToAttribute: true,
         },
         headerdata: {
@@ -139,6 +138,9 @@
             notify: true,
             reflectToAttribute: true
         },
+        searchString : {
+            type :String
+        }
       }
     }
     _heading(){
@@ -160,7 +162,6 @@
         }
         console.log(tabledata);
     }
-
     _toArray(obj) {
             return Object.keys(obj).map(function(key) {
                 return {
@@ -169,12 +170,32 @@
                 };
             });
         }
-    handleResponse(res) {
-      this.list = res.detail.response;
-    }
-    _handleErrorResponse (event) {
-      console.log("Error Response"+event.detail.request.xhr.response);
-    }
+
+
+
+
+    _computeFilter(string) {
+        if (!string) {
+            return null;
+        }else {
+            if(typeof(string) == "number"){
+                string = string.toString().toLowerCase();
+            }
+            string = string.toLowerCase();
+                return function(item) {
+                var tempArray=[];
+                Object.keys(item).forEach(function(key,index) {
+                    if(item[key].toLowerCase().indexOf(string) != -1){
+                                tempArray.push("1");
+                    }     
+                    });
+                    return (tempArray.length == 0 ? false : true);
+
+                };
+            }
+        }
+
+
 }
         window.customElements.define(askSimpleDataTables.is, askSimpleDataTables);
     </script>
