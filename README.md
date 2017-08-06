@@ -21,7 +21,7 @@ The element can be installed using bower
 
 ```js 
 
-bower install --save sinple-datatables
+bower install --save simple-datatables
 
 ```
 
