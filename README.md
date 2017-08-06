@@ -7,13 +7,21 @@
 
 MIT License
 
+## Dependencies
+```js
+"dependencies": {
+"polymer": "^2.0.2"
+} 
+
+```
+
 ## Installation
 
-The element can be installed using bower using
+The element can be installed using bower
 
 ```js 
 
-bower install --save paper-datatable
+bower install --save sinple-datatables
 
 ```
 
@@ -31,10 +39,10 @@ bower install --save paper-datatable
 
 ```
 
-###Attributes
-heading
+### Attributes
+
 ```html
-Adding 'hasheading' has attribute to component will enbale heading.
+Adding 'hasheading' as attribute to component will enbale heading.
 ex. <simple-datatables hasheading="My Title"></simple-datatables>
 
 Adding 'enablesearch' will enable universal search functionality.
